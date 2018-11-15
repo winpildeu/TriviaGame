@@ -22,7 +22,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <!-- This is where the timer will show -->
-                    <div id="timer" class="col-m-4">Timer!</div>
+                    <div id="timer" class="col-m-4 bg-secondary p-2 shadow rounded">Timer!</div>
                     <div class="col-m offset-1">
                         <!-- This is where the question will show -->
                         <div class="row">
@@ -30,7 +30,9 @@
                         </div>
                         <!-- This is where the answer choices will show -->
                         <div class="row">
-                            <div id="answers" class="col">Answer Choices!</div>
+                            <ul id="answers" class="list-group">
+                                <!-- Choices will show up here -->
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -46,6 +48,8 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <!-- Quiz JS -->
+    <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
