@@ -60,7 +60,7 @@ function displayQuestion() {
     // Show the question and answer choices
     questionDisplay.html(`<h1>${questionBank[0].question}</h1>`);
     for (let i = 0; i < questionBank[0].choices.length; i++) {
-        answerDisplay.append($("<li>").addClass("list-group-item answer show").attr({"data-choice": i, "data-toggle": "modal", "data-target": "#answerModal"}).text(`${questionBank[q].choices[i]}`));
+        answerDisplay.append($("<li>").addClass("list-group-item answer show").attr("data-choice", i).text(`${questionBank[q].choices[i]}`));
     }
 }
 
