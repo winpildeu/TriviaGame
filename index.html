@@ -17,19 +17,22 @@
         <header>
             <h1 class="text-center">Quiz Time!</h1>
         </header>
-
+        <!-- This is where the question shows -->
         <section>
             <div class="container-fluid">
                 <div class="row">
                     <!-- This is where the timer will show -->
-                    <div id="timer" class="col-m-4 bg-secondary p-2 shadow rounded">Timer!</div>
+                    <div class="col-m-4 bg-secondary p-2 rounded">
+                        <h4>Time left:</h4>
+                        <div id="timer" class="text-center"></div>
+                    </div>
                     <div class="col-m offset-1">
                         <!-- This is where the question will show -->
                         <div class="row">
-                            <div id="question" class="col">Question!</div>
+                            <div id="question" class="col bg-secondary rounded">Question!</div>
                         </div>
                         <!-- This is where the answer choices will show -->
-                        <div class="row">
+                        <div class="row pt-2">
                             <ul id="answers" class="list-group">
                                 <!-- Choices will show up here -->
                             </ul>
@@ -39,6 +42,23 @@
             </div>
         </section>
 
+        <!-- Modal -->
+        <div class="modal fade" id="answerModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-info">
+                        <h5 class="modal-title" id="answerModalLabel">Answer time!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="modalArea" class="modal-body">
+                        <p>Your answer: </p>
+                        <p>Correct answer: </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -53,3 +73,12 @@
 </body>
 
 </html>
+
+<!-- <div class="modal fade show" id="answerModal" tabindex="-1" role="dialog" style="display: block;"></div> -->
+<!-- when timer goes off remove show class and change back to display: none -->
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#answerModal">
+    Launch demo modal
+</button> -->
