@@ -1,0 +1,11 @@
+.showing {
+    display: block;
+}
+
+.hiding {
+    display: none;
+}
+
+#answer {
+    display: none;
+}
