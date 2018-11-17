@@ -1,11 +1,24 @@
-.showing {
-    display: block;
+body {
+    font-family: 'Mali', cursive;
+    font-weight: 600;
 }
 
-.hiding {
-    display: none;
+#clock {
+    font-size: 6rem;
 }
 
+#bulb {
+    font-size: 12rem;
+}
+
+#title {
+    font-size: 3rem;
+}
 #answer {
     display: none;
+}
+
+#timer {
+    font-size: 5rem;
+    color: darkred;
 }

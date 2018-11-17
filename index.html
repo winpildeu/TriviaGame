@@ -5,7 +5,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- Font import -->
+    <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
@@ -14,42 +17,35 @@
     <title>Quiz time!</title>
 </head>
 
-<body>
-
-    <div class="container bg-info shadow rounded border-dark p-2 mt-5">
-        <header>
-            <h1 class="text-center">Quiz Time!</h1>
+<body class="bg-primary">
+    <!-- Main question info -->
+    <div class="container bg-light shadow-lg rounded border-dark p-2 mt-5">
+        <header class="bg-secondary p-2 mb-2 text-center rounded">
+            <!-- This is where the question will show -->
+            <div id="question" class="col bg-secondary rounded"></div>
         </header>
-        <!-- This container shows the question and answer choices -->
+        <!-- This container shows the timer and answer choices -->
         <section>
-            <div class="container-fluid">
-                <div class="row">
+            <div class="container">
+                <div class="row align-items-center">
                     <!-- This is where the timer will show -->
-                    <div class="col-m-4 bg-secondary p-2 rounded">
-                        <h4>Time left:</h4>
-                        <div id="timer" class="text-center"></div>
+                    <div class="col-m-4 ml-5 rounded text-center">
+                        <p id="clock"><i class="far fa-clock"></i></p>
+                        <p>Time left:</p>
+                        <div id="timer">-</div>
                     </div>
-                    <div class="col-m offset-1">
-                        <!-- This is where the question will show -->
-                        <div class="row">
-                            <div id="question" class="col bg-secondary rounded">Question!</div>
-                        </div>
-                        <!-- This is where the answer choices will show -->
-                        <div class="row pt-2">
-                            <ul id="answers" class="list-group">
-                                <!-- Choices will show up here -->
-                            </ul>
-                        </div>
-                    </div>
+                    <!-- This is where the answer choices will show -->
+                    <div id="answers" class="col-sm offset-1"></div>
                 </div>
             </div>
-        </section>
+    </div>
+    </section>
 
-        <!-- End of container div -->
+    <!-- End of container div -->
     </div>
 
     <!-- This section contains the answer info -->
-    <div class="container mt-2 bg-light rounded">
+    <div class="container mt-2 bg-light shadow-lg rounded">
         <section id="answer">
             <div class="row bg-danger p-2 rounded">
                 <div class="col-m-12">
@@ -70,21 +66,36 @@
         </section>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade show" id="startGame" tabindex="-1" role="dialog" style="display: inline;">
+    <!--  Start Game Modal -->
+    <div class="modal fade show bg-primary" id="startGame" tabindex="-1" role="dialog" style="display: inline;">
+        <div class="modal-dialog shadow-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <p id="bulb"><i class="far fa-lightbulb"></i></p>
+                    <p id="title" class="text-info">Quiz Time!</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="startButton" type="button" class="btn btn-primary"><i class="fas fa-play"></i> START</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  End Game Modal -->
+    <div class="modal show bg-dark" id="endGame" tabindex="-1" role="dialog" style="display: none;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Do you know Jack?</h5>
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h5 class="modal-title" id="modalLabel">Game Over</h5>
                 </div>
-                <div class="modal-body">
-                    You think you're smart enough to get these right? TEST YOUR [brain] MIGHT!
+                <div class="modal-body text-center">
+                    <p>Number of answers correct: </p>
+                    <div id="correct"></div>
+                    <p>Number of answers wrong: </p>
+                    <div id="wrong"></div>
                 </div>
                 <div class="modal-footer">
-                    <button id="startButton" type="button" class="btn btn-primary">START</button>
+                    <button id="resetButton" type="button" class="btn btn-primary">START AGAIN?</button>
                 </div>
             </div>
         </div>
