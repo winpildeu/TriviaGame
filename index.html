@@ -32,7 +32,7 @@
                     <div class="col-m-4 ml-5 rounded text-center">
                         <p id="clock"><i class="far fa-clock"></i></p>
                         <p>Time left:</p>
-                        <div id="timer">-</div>
+                        <div id="timer">10</div>
                     </div>
                     <!-- This is where the answer choices will show -->
                     <div id="answers" class="col-sm offset-1"></div>
@@ -40,29 +40,32 @@
             </div>
     </div>
     </section>
-
     <!-- End of container div -->
     </div>
 
+    <br>
     <!-- This section contains the answer info -->
-    <div class="container mt-2 bg-light shadow-lg rounded">
-        <section id="answer">
-            <div class="row bg-danger p-2 rounded">
-                <div class="col-m-12">
-                    <p>Answer Time!</p>
-                </div>
-            </div>
+    <div id="answer" class="container bg-light shadow-lg rounded">
+        <section>
+            <br>
+            <header class="bg-secondary p-2 text-center rounded">
+                <h3>Answer time:</h3>
+            </header>
+            <br>
             <!-- Answers will show here -->
-            <div class="row p-2">
+            <div class="row p-2 ml-1">
                 <div class="col-m">
-                    <p>Your answer: </p>
+                    <h5>Your answer: </h5>
+                    <hr>
                     <div id="myAns"></div>
                 </div>
-                <div class="col-m">
-                    <p>Correct answer: </p>
+                <div class="col-m offset-2">
+                    <h5>Correct answer: </h5>
+                    <hr>
                     <div id="correctAns"></div>
                 </div>
             </div>
+            <br>
         </section>
     </div>
 
@@ -81,7 +84,7 @@
         </div>
     </div>
 
-    <!--  End Game Modal -->
+    <!--  End Game Pop-up Modal -->
     <div class="modal show bg-dark" id="endGame" tabindex="-1" role="dialog" style="display: none;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -90,9 +93,9 @@
                 </div>
                 <div class="modal-body text-center">
                     <p>Number of answers correct: </p>
-                    <div id="correct"></div>
+                    <div id="correct" class="results"></div>
                     <p>Number of answers wrong: </p>
-                    <div id="wrong"></div>
+                    <div id="wrong" class="results"></div>
                 </div>
                 <div class="modal-footer">
                     <button id="resetButton" type="button" class="btn btn-primary">START AGAIN?</button>
@@ -117,12 +120,3 @@
 </body>
 
 </html>
-
-<!-- <div class="modal fade show" id="answerModal" tabindex="-1" role="dialog" style="display: block;"></div> -->
-<!-- when timer goes off remove show class and change back to display: none -->
-
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#answerModal">
-    Launch demo modal
-</button> -->

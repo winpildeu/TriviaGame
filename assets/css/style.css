@@ -1,8 +1,15 @@
+/* Element styling */
 body {
     font-family: 'Mali', cursive;
     font-weight: 600;
 }
 
+/* Class styling */
+.results {
+    font-size: 5rem;
+}
+
+/* ID styling */
 #clock {
     font-size: 6rem;
 }
