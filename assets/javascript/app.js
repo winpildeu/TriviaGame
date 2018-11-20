@@ -38,8 +38,9 @@ const questionBank = [{
 
 // counter to move to the next question
 let q = 0;
-// counts the number of correct answers
+// counts the number of correct/ incorrect answers
 let correct = 0;
+let incorrect = 0;
 
 let timeLeft;
 let clear;
@@ -65,7 +66,18 @@ function displayAnswer() {
     // show the answer
     $("#answer").css("display", "block");
 
-    checkAnswer(userChoice);
+    // Checks if the user answer and real answer match
+    // if (userChoice == questionBank[q].ans) {
+    //     correct++;
+    //     console.log(`Correct answer: ${questionBank[q].ans}`);
+    //     console.log(`Number correct: ${correct}`);    
+    // } else {
+    //     incorrect++;
+    // }
+    // ES6 way to write simple if/ else conditions
+    (userChoice == questionBank[q].ans) ? correct++ : incorrect++;
+
+    // Clears the page for the next question
     clear = setTimeout(function () {
 
         // empty out the divs
@@ -79,7 +91,7 @@ function displayAnswer() {
             // go to the results page
             $("#endGame").css("display", "inline");
             $("#correct").text(`${correct}`);
-            $("#incorrect").text(`${(q-correct)}`);
+            $("#incorrect").text(`${(incorrect)}`);
         } else {
             displayQuestion();
         }
@@ -113,13 +125,6 @@ function displayQuestion() {
     }
 }
 
-function checkAnswer(userAnswer) {
-    if (userAnswer === questionBank[q].ans) {
-        correct++;
-        console.log(`Number correct: ${correct}`);
-        
-    }
-}
 // =========== MAIN CODE ===========
 
 $(function () {
