@@ -1,5 +1,6 @@
 # TriviaGame
  A Trivia game using JavaScript for the logic and jQuery to manipulate HTML.
+URL: https://winpildeu.github.io/TriviaGame/
 
 ## How to play:
 
